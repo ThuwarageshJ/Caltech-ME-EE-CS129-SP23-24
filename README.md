@@ -5,7 +5,7 @@ Code for the ME/EE/CS129 - Experimental Robotics Course - Caltech - Spring 23/24
 [Caltech Course Catalog 2023-24](https://www.cms.caltech.edu/academics/courses/mecsee-129)
 
 # Project
-The project's goal was to create robust and reactive robot that can traverse a Manhattan styled map and execute various functionalities. The robot encompasses a system of 3 IR sensors, a system of 3 ultrasound sensors, and a magnetometer to retrieve information and 2 DC motors to execute the motion. Simple detector functions have been executed in the code to make the sensor data reliable. With these equipments, the robot is capable to do the following functionalities.
+The project's goal was to create robust and reactive robot that can traverse a Manhattan styled map and execute various functionalities. The robot encompasses a system of 3 IR sensors, a system of 3 ultrasound sensors, and a magnetometer to retrieve information and 2 DC motors to execute the motion. Simple detector functions have been executed in the code to make the sensor data reliable. With these equipments, the robot is capable of executing the following functionalities.
 
 - Basic Line and Tunnel following.
     - capable of autnomously switching between following dark lines and following side tunnels.
