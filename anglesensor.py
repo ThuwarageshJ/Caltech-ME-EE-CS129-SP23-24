@@ -22,7 +22,7 @@ M2=[]
 # Analog to digital converter
 class ADC:
 
-    def __init__(self, io): 
+    def __init__(self, LATCH, ADDRESS, READY, PINS, io): 
         self.io = io
         self.io.set_mode(LATCH, pigpio.OUTPUT) # LATCH 
         self.io.set_mode(ADDRESS, pigpio.OUTPUT) # ADDRESS 
@@ -55,16 +55,16 @@ class ADC:
 class AngleSensor:
 
     # Current max-min values output by the magnetometers (for scaling)
-    maxes=[171, 199]
-    mins=[62, 86]
+    maxes=[180, 203]
+    mins=[59, 76]
 
     # Storage to keep track of max-min values output by magnetometers: needed for calibration 
     new_maxes=[0,0]
     new_mins=[1000,1000]
 
     # Initialize the ADC object
-    def __init__(self, io):
-        self.ADC = ADC(io)
+    def __init__(self,LATCH, ADDRESS, READY, PINS, io):
+        self.ADC = ADC(LATCH, ADDRESS, READY, PINS,io)
 
     # Parse the 8-bit integer from both the channels to the angle relative to the geographic North
     def read_angle(self):
@@ -111,8 +111,8 @@ if __name__ == "__main__":
         sys.exit(0)
     print("GPIO ready...")
 
-    angle_sensor= AngleSensor(io)      # Magnetometer object
-    bot=DriveSystem(left_forward_leg, left_reverse_leg, right_forward_leg, right_reverse_leg,io, max_pwm, pwm_frequency) # Drivesystem object to spin the bot for calibration
+    angle_sensor= AngleSensor(LATCH, ADDRESS, READY, PINS,io)      # Magnetometer system
+    bot=DriveSystem(left_forward_leg, left_reverse_leg, right_forward_leg, right_reverse_leg, max_pwm, pwm_frequency, io) # Drivesystem object to spin the bot for calibration
 
     t0=time.time()
     t=t0

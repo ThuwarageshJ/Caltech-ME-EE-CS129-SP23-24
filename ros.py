@@ -1,3 +1,11 @@
+"""
+    Caltech ME/EE/CS129 - Experimental Robotics - Spring 23/24 
+    Team Robo-TEd
+    Contributors: Course
+
+    ROS file. Provided by the course.
+
+"""
 #!/usr/bin/env python3
 #
 #   ros.py

@@ -4,6 +4,7 @@
     Contributors: Thuwaragesh Jayachandran, Edward Ju
 
     File of global constants - pin numbers, thresholds, file paths
+    
 """
 import numpy as np
 import os
@@ -60,13 +61,13 @@ THRESHOLD_turn=0.65                         # Next street detector
 # Pull forward drive time
 T_drive= 0.315                              
 
-# Threshold distances for herding behavior
-THRESHOLD_herd= 0.2
-
 # Threshold distances for blockages   
 THRESHOLD_checkahead=[0.6, 0.84]            # Detection before and after a drive (0: Cardinal directions ; 1: Diagonal directions)
 THRESHOLD_obstacle = 0.18                   # Detection during drive 
 THRESHOLD_clear = 0.25                      # Clearing detection during drive
+
+# Tunnel width for tunnel following 
+Tunnel_width = 0.5                          
 
 # file path to maps (pickles)
 cur_dir=os.path.dirname(__file__)
